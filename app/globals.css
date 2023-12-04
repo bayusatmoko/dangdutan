@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,9 +14,9 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +24,54 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+html, body {
+  height: 100%;
+  background-color: white;
+  color: aliceblue;
+}
+
+.menu { 
+grid-area: menu;
+border-radius: 8px;
+background-color: #121212; 
+}
+.main-view { 
+grid-area: main-view; 
+border-radius: 8px;
+background-color: #121212; 
+}
+
+.bottom-menu { 
+grid-area: bottom-menu; 
+border-radius: 8px;
+background-color: #121212; 
+}
+
+.right-menu { 
+grid-area: right-menu; 
+border-radius: 8px;
+background-color: white;
+gap: 0;
+}
+
+.grid-container {
+display: grid;
+grid-template-areas:
+  'menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'bottom-menu main-view main-view main-view'
+  'now-playing-bar now-playing-bar now-playing-bar now-playing-bar';
+gap: 8px;
+background-color: black;
+height: 100%;
+min-height: 95%;
+width: 100%;
+margin: 8px;
 }
