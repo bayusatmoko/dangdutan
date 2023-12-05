@@ -1,10 +1,9 @@
 import { executeQuery } from "../lib/db";
 
-export default function handler(req, res) {
-  console.log("TEST");
+export default async function handler(req, res) {
   try {
-    executeQuery("SELECT * FROM songs");
-    res.status(200).json({ message: "This will be song API" });
+    const [rows] = await executeQuery("SELECT * FROM songs");
+    res.status(200).json({ rows });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

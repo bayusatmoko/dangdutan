@@ -1,4 +1,4 @@
-var mysql = require("mysql");
+var mysql = require("mysql2/promise");
 
 // var con = mysql.createConnection({
 //   host: process.env.RDS_HOSTNAME,
@@ -8,22 +8,17 @@ var mysql = require("mysql");
 //   database: "songs",
 // });
 
-var con = mysql.createConnection({
-    host: "mysql.cnrttzowjwem.ap-southeast-1.rds.amazonaws.com",
-    user: "admin",
+var dbConfig = {
+    host: "localhost",
+    user: "root",
     password: "Master1996",
     port: 3306,
-    // database: "songs",
-  });
+    database: "songs"
+}
 
 
-export const executeQuery = (query) => {
-  con.connect(function (err) {
-    if (err) throw err;
-    console.log("success connect db")
-    // con.query(query, function (err, result, fields) {
-    //   if (err) throw err;
-    //   console.log(result);
-    });
-//   });
+export const executeQuery = async (query) => {
+  const connection = await mysql.createConnection(dbConfig)
+  const data = await connection.execute(query)
+  return data;
 };

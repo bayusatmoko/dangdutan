@@ -1,4 +1,15 @@
+'use client'
+import { useEffect } from "react";
+
 export default function Home() {
+  const fetchData = async () => {
+    await fetch("/api/songs")
+  }
+
+  useEffect(() => {
+    fetchData()
+  })
+
   return (
     <div className="grid-container">
       <div className="menu">
@@ -6,7 +17,7 @@ export default function Home() {
           <li>
             <a
               href="#"
-              class="hover:font-black dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:font-black dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Home
             </a>
@@ -14,7 +25,7 @@ export default function Home() {
           <li>
             <a
               href="#"
-              class="hover:font-black dark:hover:bg-gray-600 dark:hover:text-white"
+              className="hover:font-black dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Search
             </a>
