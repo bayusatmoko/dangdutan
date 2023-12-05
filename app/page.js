@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchData();
+    // fetchData();
     const data = [
       {
         title: "Penjaga Hati",
