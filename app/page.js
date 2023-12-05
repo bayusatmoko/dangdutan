@@ -106,6 +106,8 @@ export default function Home() {
         <ReactAudioPlayer
           src="https://songssongs.s3.ap-southeast-1.amazonaws.com/ph.mp3"
           controls
+          loop
+          autoPlay         
         />
       </div>
     </div>
