@@ -55,12 +55,12 @@ export default function Home() {
 
   const renderView = () => {
     return songs.map((song, index) => (
-      <div key={`${song}-${index}`} class="flex w-1/4 flex-wrap m-2">
-        <div class="w-full p-1 md:p-4 bg-black bg-opacity-20 rounded-xl">
+      <div key={`${song}-${index}`} className="flex w-1/4 flex-wrap m-2">
+        <div className="w-full p-1 md:p-4 bg-black bg-opacity-20 rounded-xl">
           <Image
             alt="gallery"
-            class="block h-4/5 w-full rounded-lg object-cover object-center"
-            src="https://thumb.viva.co.id/media/frontend/thumbs3/2023/10/24/6537776d7ab3c-nadhif-basamalah_1265_711.jpg"
+            className="block h-4/5 w-full rounded-lg object-cover object-center"
+            src="https://songssongs.s3.ap-southeast-1.amazonaws.com/ph.mp3"
           />
           <h1 className="title text-xl mt-2">{song.title}</h1>
           <h3 className="albums">{song.album}</h3>
