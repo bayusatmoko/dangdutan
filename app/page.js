@@ -60,7 +60,9 @@ export default function Home() {
           <Image
             alt="gallery"
             className="block h-4/5 w-full rounded-lg object-cover object-center"
-            src="https://songssongs.s3.ap-southeast-1.amazonaws.com/ph.mp3"
+            src="https://songssongs.s3.ap-southeast-1.amazonaws.com/nadhif.jpg"
+            width={500}
+            height={500}
           />
           <h1 className="title text-xl mt-2">{song.title}</h1>
           <h3 className="albums">{song.album}</h3>
@@ -92,8 +94,8 @@ export default function Home() {
         </ul>
       </div>
       <div className="main-view">
-        <div class="container lg:p-5 lg:pt-5">
-          <div class="-m-1 flex justify-center flex-wrap md:-m-2">
+        <div className="container lg:p-5 lg:pt-5">
+          <div className="-m-1 flex justify-center flex-wrap md:-m-2">
             {renderView()}
           </div>
         </div>
