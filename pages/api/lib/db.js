@@ -25,5 +25,5 @@ export const executeQuery = (query) => {
     //   if (err) throw err;
     //   console.log(result);
     });
-  });
+//   });
 };
