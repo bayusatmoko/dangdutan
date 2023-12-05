@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
+import Image from 'next/image'
 
 export default function Home() {
   const [songs, setSongs] = useState([]);
@@ -53,10 +54,10 @@ export default function Home() {
   }, []);
 
   const renderView = () => {
-    return songs.map((song) => (
-      <div class="flex w-1/4 flex-wrap m-2">
+    return songs.map((song, index) => (
+      <div key={`${song}-${index}`} class="flex w-1/4 flex-wrap m-2">
         <div class="w-full p-1 md:p-4 bg-black bg-opacity-20 rounded-xl">
-          <img
+          <Image
             alt="gallery"
             class="block h-4/5 w-full rounded-lg object-cover object-center"
             src="https://thumb.viva.co.id/media/frontend/thumbs3/2023/10/24/6537776d7ab3c-nadhif-basamalah_1265_711.jpg"
