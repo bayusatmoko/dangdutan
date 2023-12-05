@@ -61,8 +61,9 @@ export default function Home() {
             alt="gallery"
             className="block h-4/5 w-full rounded-lg object-cover object-center"
             src="https://songssongs.s3.ap-southeast-1.amazonaws.com/nadhif.jpg"
-            width={500}
-            height={500}
+            width={0}
+            height={0}
+            sizes="100vw"
           />
           <h1 className="title text-xl mt-2">{song.title}</h1>
           <h3 className="albums">{song.album}</h3>
