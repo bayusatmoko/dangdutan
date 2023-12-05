@@ -20,5 +20,6 @@ var dbConfig = {
 export const executeQuery = async (query) => {
   const connection = await mysql.createConnection(dbConfig)
   const data = await connection.execute(query)
+  connection.destroy()
   return data;
 };
