@@ -13,16 +13,17 @@ var con = mysql.createConnection({
     user: "admin",
     password: "Master1996",
     port: 3306,
-    database: "songs",
+    // database: "songs",
   });
 
 
 export const executeQuery = (query) => {
   con.connect(function (err) {
     if (err) throw err;
-    con.query(query, function (err, result, fields) {
-      if (err) throw err;
-      console.log(result);
+    console.log("success connect db")
+    // con.query(query, function (err, result, fields) {
+    //   if (err) throw err;
+    //   console.log(result);
     });
   });
 };
