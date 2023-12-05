@@ -56,7 +56,7 @@ export default function Home() {
   const renderView = () => {
     return songs.map((song, index) => (
       <div key={`${song}-${index}`} className="flex w-1/4 flex-wrap m-2">
-        <div className="w-full p-1 md:p-4 bg-black bg-opacity-20 rounded-xl">
+        <div className="w-full p-1 md:p-6 bg-black bg-opacity-20 rounded-xl">
           <Image
             alt="gallery"
             className="block h-4/5 w-full rounded-lg object-cover object-center"
