@@ -9,8 +9,8 @@ var mysql = require("mysql2/promise");
 // });
 
 var dbConfig = {
-    host: "localhost",
-    user: "root",
+    host: "mysql.cnrttzowjwem.ap-southeast-1.rds.amazonaws.com",
+    user: "admin",
     password: "Master1996",
     port: 3306,
     database: "songs"

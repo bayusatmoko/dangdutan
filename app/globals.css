@@ -29,9 +29,8 @@
 html,
 body {
   height: 100%;
-  padding: 8px;
+  padding: 0.2%;
   background-color: black;
-  color: aliceblue;
 }
 
 .menu {
@@ -62,10 +61,7 @@ ul {
     #161514,
     #121212
   );
-}
-
-img {
-  overflow: hidden;
+  color: aliceblue;
 }
 
 .bottom-menu {
@@ -104,10 +100,9 @@ img {
     "bottom-menu main-view main-view main-view main-view"
     "bottom-menu main-view main-view main-view main-view"
     "bottom-menu main-view main-view main-view main-view"
-    "now-playing-bar now-playing-bar now-playing-bar now-playing-bar now-playing-bar";
+    "footer footer footer footer footer";
   gap: 8px;
   height: 100%;
-  min-height: 95%;
   width: 100%;
 }
 
@@ -120,4 +115,18 @@ img {
 
 .albums {
   color: #a7a7a7;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  grid-area: footer;
+  background-color: rgb(208, 127, 127);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgb(208, 127, 127);
 }
