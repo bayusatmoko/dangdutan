@@ -23,8 +23,8 @@ export default function Home() {
 
   const renderView = () => {
     return songs.map((song, index) => (
-      <div key={`${song}-${index}`} className="flex md:w-1/4 w-full flex-wrap m-2">
-        <div className="w-full p-4 md:p-6 bg-black bg-opacity-20 rounded-xl">
+      <div key={`${song}-${index}`} className="flex sm:w-1/4 md:w-1/4 w-full flex-wrap m-4">
+        <div className="w-full p-2 md:p-6 bg-black bg-opacity-20 rounded-xl">
           <a
             href=""
             onClick={(e) => {
@@ -42,15 +42,15 @@ export default function Home() {
               priority
             />
           </a>
-          <h1 className="title text-xs sm:text-md md:text-md lg:text-xl mt-2">{song.title}</h1>
-          <h3 className="albums text-xs sm:text-md md:text-md lg:text-xl">{song.album}</h3>
+          <h1 className="title text-xs lg:text-lg pt-2">{song.title}</h1>
+          <h3 className="albums text-xs lg:text-lg">{song.album}</h3>
         </div>
       </div>
     ));
   };
 
   return (
-    <div className="md:flex ...">
+    <div className="p-1 md:flex ...">
       <div className="grid-container">
         <div className="menu hidden lg:flex ...">
           <ul>
@@ -84,6 +84,7 @@ export default function Home() {
         </div>
         <div className="main-view">
           <div className="md:p-2">
+            <h1 className="text-center text-xl my-2 font-extrabold">Songs For You</h1>
             <div className="-m-1 flex justify-center flex-wrap md:-m-2">
               {renderView()}
             </div>
