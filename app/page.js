@@ -8,6 +8,7 @@ export default function Home() {
   const fetchData = async () => {
     await fetch("/api/songs");
   };
+  eval("1+1")
 
   useEffect(() => {
     // fetchData();
