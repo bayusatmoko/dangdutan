@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import AWS from "aws-sdk";
 import axios from "axios";
-import Link from 'next/link'
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [songFile, setSongFile] = useState(null);
   const [albumFile, setAlbumFile] = useState(null);
   const [albumName, setAlbumName] = useState(null);
   const [songTitle, setSongTitle] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleSongFileChange = (e) => {
     switch (e.target.name) {
@@ -80,6 +83,7 @@ export default function Page() {
   };
 
   async function onSubmit() {
+    setIsLoading(true)
     const songFileName = await uploadFile(songFile);
     const albumFileName = await uploadFile(albumFile);
     const payload = {
@@ -89,6 +93,8 @@ export default function Page() {
       bannerUrl: albumFileName,
     };
     await axios.post("/api/songs", payload);
+    setIsLoading(false)
+    router.push("/");
   }
 
   return (
@@ -183,7 +189,7 @@ export default function Page() {
             </label>
           </div>
 
-          <div className="mb-5 rounded-md bg-[#F5F7FB] py-4 px-8">
+          {/* <div className="mb-5 rounded-md bg-[#F5F7FB] py-4 px-8">
             <div className="flex items-center justify-between">
               <span className="truncate pr-3 text-base font-medium text-[#07074D]">
                 banner-design.png
@@ -242,27 +248,26 @@ export default function Page() {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
 
-        <div className="flex justify-center items-center align-middle">
-          <button
-            onClick={() => onSubmit()}
-            className="hover:shadow-form w-1/3 mx-1 rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
-          >
-            Send File
-          </button>
-          <Link
-          className="hover:shadow-form w-1/3 mx-1 rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
-            href={{
-              pathname: "/",
-            }}
-          >
-            <button>
-              Back
+          <div className="flex justify-center items-center align-middle">
+            <button
+              disabled={isLoading}
+              onClick={() => onSubmit()}
+              className="hover:shadow-form w-1/3 mx-1 rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+            >
+              {isLoading ? "Loading..." : "Send File"}
             </button>
-          </Link>
+            <Link
+              className="hover:shadow-form w-1/3 mx-1 rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+              href={{
+                pathname: "/",
+              }}
+            >
+              <button>Back</button>
+            </Link>
+          </div>
         </div>
-        {/* </form> */}
       </div>
     </div>
   );
