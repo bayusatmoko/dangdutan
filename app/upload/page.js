@@ -39,15 +39,15 @@ export default function Page() {
 
   const uploadFile = async (file) => {
     // S3 Bucket Name
-    const S3_BUCKET = "songssongs";
+    const S3_BUCKET = "songssongs2";
 
     // S3 Region
     const REGION = "ap-southeast-1";
 
     // S3 Credentials
     AWS.config.update({
-      accessKeyId: "AKIAXMCF2MVY7TOLIDLR",
-      secretAccessKey: "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",
+      accessKeyId: "AKIAQTLFDT2V3ZPVTN3N",
+      secretAccessKey: "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",
     });
     const s3 = new AWS.S3({
       params: { Bucket: S3_BUCKET },

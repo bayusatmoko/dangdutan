@@ -4,12 +4,12 @@ import ReactAudioPlayer from "react-audio-player";
 import Image from "next/image";
 import Link from 'next/link'
 
-const S3_BASE = "https://songssongs.s3.ap-southeast-1.amazonaws.com";
+const S3_BASE = "https://songssongs2.s3.ap-southeast-1.amazonaws.com";
 
 export default function Home() {
   const [songs, setSongs] = useState([]);
   const [currentSong, setCurrentSong] = useState(
-    "https://songssongs.s3.ap-southeast-1.amazonaws.com/nadhif.mp3"
+    "https://songssongs2.s3.ap-southeast-1.amazonaws.com/nadhif.mp3"
   );
 
   const fetchData = async () => {
