@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Image from "next/image";
+import Link from 'next/link'
 
 const S3_BASE = "https://songssongs.s3.ap-southeast-1.amazonaws.com";
 
@@ -79,6 +80,19 @@ export default function Home() {
                 />
                 Search
               </a>
+            </li>
+            <li>
+              <Link href="/upload" className="hover:text-white text-white">
+                <Image
+                  src="/upload.svg"
+                  alt="Upload Logo"
+                  className="inline mr-5"
+                  width={20}
+                  height={20}
+                  priority
+                />
+                Upload
+              </Link>
             </li>
           </ul>
         </div>
