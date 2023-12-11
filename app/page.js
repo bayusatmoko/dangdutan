@@ -35,7 +35,7 @@ export default function Home() {
           >
             <Image
               alt="gallery"
-              className="block md:h-4/5 sm:h-3/5 xs:h-2/5 w-full rounded-lg object-cover object-center"
+              className="block md:h-4/5 sm:h-3/5 xs:h-2/5 w-full rounded-lg object-cover object-center hover:invert"
               src={`${S3_BASE}/${song.bannerUrl}`}
               width={0}
               height={0}
