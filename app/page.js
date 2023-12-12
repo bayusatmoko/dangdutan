@@ -8,9 +8,7 @@ const S3_BASE = "https://songssongs2.s3.ap-southeast-1.amazonaws.com";
 
 export default function Home() {
   const [songs, setSongs] = useState([]);
-  const [currentSong, setCurrentSong] = useState(
-    "https://songssongs2.s3.ap-southeast-1.amazonaws.com/nadhif.mp3"
-  );
+  const [currentSong, setCurrentSong] = useState("");
 
   const fetchData = async () => {
     const response = await fetch("/api/songs");
@@ -44,7 +42,7 @@ export default function Home() {
             />
           </a>
           <h1 className="title text-xs lg:text-lg pt-2">{song.title}</h1>
-          <h3 className="albums text-xs lg:text-lg">{song.album}</h3>
+          <h2 className="albums text-xs lg:text-lg">{song.album}</h2>
         </div>
       </div>
     ));
@@ -106,7 +104,7 @@ export default function Home() {
         </div>
         <div className="bottom-menu hidden lg:block ..."></div>
         <div className="footer p-2 rounded-lg hidden mb-4 lg:flex ...">
-          <ReactAudioPlayer src={currentSong} controls loop autoPlay />
+          <ReactAudioPlayer src={currentSong} controls loop />
         </div>
       </div>
     </div>
