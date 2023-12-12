@@ -1,0 +1,25 @@
+{
+	"Version": "2008-10-17",
+	"Statement": [
+		{
+			"Sid": "PublicReadForGetBucketObjects",
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "*"
+			},
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::songssongs2/*"
+		},
+		{
+			"Effect": "Allow",
+			"Principal": {
+				"AWS": "arn:aws:iam::041551109803:root"
+			},
+			"Action": "s3:*",
+			"Resource": [
+				"arn:aws:s3:::songssongs2",
+				"arn:aws:s3:::songssongs2/*"
+			]
+		}
+	]
+}
