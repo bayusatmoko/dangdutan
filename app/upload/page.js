@@ -46,8 +46,8 @@ export default function Page() {
 
     // S3 Credentials
     AWS.config.update({
-      accessKeyId: "AKIAQTLFDT2V3ZPVTN3N",
-      secretAccessKey: "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",
+      accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY
     });
     const s3 = new AWS.S3({
       params: { Bucket: S3_BUCKET },
