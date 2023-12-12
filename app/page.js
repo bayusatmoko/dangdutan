@@ -104,7 +104,7 @@ export default function Home() {
         </div>
         <div className="bottom-menu hidden lg:block ..."></div>
         <div className="footer p-2 rounded-lg hidden mb-4 lg:flex ...">
-          <ReactAudioPlayer src={currentSong} controls loop />
+          <ReactAudioPlayer src={currentSong} controls loop autoPlay />
         </div>
       </div>
     </div>
